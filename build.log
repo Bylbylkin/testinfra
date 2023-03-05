@@ -1,0 +1,229 @@
+#1 [internal] load build definition from Dockerfile
+#1 sha256:3ac98496278bc2f756fa10895a20f59fcfc93c60ebbb127ffa3753aa2c67466c
+#1 transferring dockerfile: 37B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:c6b0fe30ce5bd400bb9eb6530a7a72f7a3e3e0c68a3de6dae98f8f0f108e1840
+#2 transferring context: 35B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.11
+#3 sha256:945fbca4e52bf0ec6381d0b4d1f2428355621f76fe0481f891e046b7ce4e8fdf
+#3 DONE 0.6s
+
+#4 [ 1/22] FROM docker.io/library/alpine:3.11@sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d
+#4 sha256:0b8a38d93b41bdacc63865977ceac84b8f0aac5562dfd50c69debad965012025
+#4 CACHED
+
+#15 [internal] load build context
+#15 sha256:3c437001932df2a37e38a7aad4e59b2780711b7fef0f115dbc4534a426ed0852
+#15 transferring context: 295B done
+#15 DONE 0.0s
+
+#5 https://packages.whatwedo.ch/php-alpine.rsa.pub
+#5 sha256:c9f6e46c91368174a903e907a84b842351f7c66b490dcfb0373177768e810f40
+#5 CACHED
+
+#6 [ 2/22] ADD https://packages.whatwedo.ch/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
+#6 sha256:640b60f78f17522b6470c00affd1bdd9b67dcebb024bae03fb27558d9776530e
+#6 DONE 0.0s
+
+#7 [ 3/22] RUN apk --update add ca-certificates
+#7 sha256:4169af2a19ca7f8a49f2ebec5da591cd5ee3b2a09cd0769d8b2ac68fa5e42c7d
+#7 0.131 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/aarch64/APKINDEX.tar.gz
+#7 0.476 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/aarch64/APKINDEX.tar.gz
+#7 0.966 (1/1) Installing ca-certificates (20191127-r2)
+#7 1.102 Executing busybox-1.31.1-r11.trigger
+#7 1.105 Executing ca-certificates-20191127-r2.trigger
+#7 1.126 OK: 6 MiB in 15 packages
+#7 DONE 1.2s
+
+#8 [ 4/22] RUN echo "https://packages.whatwedo.ch/php-alpine/v3.11/php-7.4" >> /etc/apk/repositories
+#8 sha256:92ec7189b96a4103b6d5437e2c47a28d51dd7ca64eb31f7af5d5e5b631dace36
+#8 DONE 0.3s
+
+#9 [ 5/22] RUN apk --no-cache add php php-fpm php-opcache php-openssl php-curl     nginx supervisor curl
+#9 sha256:6dfaabe9383c8f89e13c7901e5221aade3271b3c5bc9a8bda313ea3e99797abd
+#9 0.152 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/aarch64/APKINDEX.tar.gz
+#9 0.643 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/aarch64/APKINDEX.tar.gz
+#9 1.384 fetch https://packages.whatwedo.ch/php-alpine/v3.11/php-7.4/aarch64/APKINDEX.tar.gz
+#9 1.598 WARNING: Ignoring https://packages.whatwedo.ch/php-alpine/v3.11/php-7.4: No such file or directory
+#9 1.615 (1/28) Installing nghttp2-libs (1.40.0-r1)
+#9 1.686 (2/28) Installing libcurl (7.79.1-r0)
+#9 1.876 (3/28) Installing curl (7.79.1-r0)
+#9 2.041 (4/28) Installing pcre (8.43-r1)
+#9 2.252 (5/28) Installing nginx (1.16.1-r8)
+#9 2.284 Executing nginx-1.16.1-r8.pre-install
+#9 2.853 (6/28) Installing php7-common (7.3.22-r0)
+#9 2.898 (7/28) Installing argon2-libs (20190702-r1)
+#9 2.939 (8/28) Installing ncurses-terminfo-base (6.1_p20200118-r4)
+#9 2.986 (9/28) Installing ncurses-libs (6.1_p20200118-r4)
+#9 3.288 (10/28) Installing libedit (20191211.3.1-r0)
+#9 3.456 (11/28) Installing pcre2 (10.34-r1)
+#9 3.780 (12/28) Installing xz-libs (5.2.4-r0)
+#9 3.884 (13/28) Installing libxml2 (2.9.12-r0)
+#9 4.438 (14/28) Installing php7 (7.3.22-r0)
+#9 6.170 (15/28) Installing php7-curl (7.3.22-r0)
+#9 6.241 (16/28) Installing php7-fpm (7.3.22-r0)
+#9 7.432 (17/28) Installing php7-opcache (7.3.22-r0)
+#9 7.558 (18/28) Installing php7-openssl (7.3.22-r0)
+#9 7.611 (19/28) Installing libbz2 (1.0.8-r1)
+#9 7.658 (20/28) Installing expat (2.2.9-r1)
+#9 7.735 (21/28) Installing libffi (3.2.1-r6)
+#9 7.776 (22/28) Installing gdbm (1.13-r1)
+#9 7.842 (23/28) Installing readline (8.0.1-r0)
+#9 7.924 (24/28) Installing sqlite-libs (3.30.1-r2)
+#9 8.310 (25/28) Installing python3 (3.8.10-r0)
+#9 26.70 (26/28) Installing py3-meld3 (2.0.0-r1)
+#9 26.84 (27/28) Installing py3-setuptools (42.0.2-r0)
+#9 28.57 (28/28) Installing supervisor (4.1.0-r0)
+#9 29.57 Executing busybox-1.31.1-r11.trigger
+#9 29.58 OK: 90 MiB in 43 packages
+#9 DONE 29.7s
+
+#10 [ 6/22] RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+#10 sha256:b2afbbac5ec0e08f9f27bd642f6e0b7dc7917fdd4d32d57ca6dba7e0db0c8823
+#10 0.319 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/aarch64/APKINDEX.tar.gz
+#10 0.895 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/aarch64/APKINDEX.tar.gz
+#10 1.506 fetch https://packages.whatwedo.ch/php-alpine/v3.11/php-7.4/aarch64/APKINDEX.tar.gz
+#10 1.810 WARNING: Ignoring https://packages.whatwedo.ch/php-alpine/v3.11/php-7.4: No such file or directory
+#10 1.838 OK: 90 MiB in 43 packages
+#10 DONE 1.9s
+
+#11 [ 7/22] RUN python3 -m ensurepip
+#11 sha256:779e9caa915df18f1781b67fd267cfcd6f20e5a1d17fa4db5c8163dfbdcc97fc
+#11 1.211 Looking in links: /tmp/tmpd4s0zox7
+#11 1.212 Requirement already satisfied: setuptools in /usr/lib/python3.8/site-packages (56.0.0)
+#11 1.212 Requirement already satisfied: pip in /usr/lib/python3.8/site-packages (21.1.1)
+#11 1.231 WARNING: Running pip as root will break packages and permissions. You should install packages reliably by using venv: https://pip.pypa.io/warnings/venv
+#11 DONE 1.3s
+
+#12 [ 8/22] RUN pip3 install --no-cache --upgrade pip setuptools
+#12 sha256:999df1e116cff8133c35bf2f7054ef8da7016536086969249fe026b9bea73c5c
+#12 0.368 Requirement already satisfied: pip in /usr/lib/python3.8/site-packages (21.1.1)
+#12 0.687 Collecting pip
+#12 0.808   Downloading pip-23.0.1-py3-none-any.whl (2.1 MB)
+#12 1.428 Requirement already satisfied: setuptools in /usr/lib/python3.8/site-packages (56.0.0)
+#12 1.865 Collecting setuptools
+#12 1.892   Downloading setuptools-67.4.0-py3-none-any.whl (1.1 MB)
+#12 2.302 Installing collected packages: setuptools, pip
+#12 2.302   Attempting uninstall: setuptools
+#12 2.302     Found existing installation: setuptools 56.0.0
+#12 2.329     Uninstalling setuptools-56.0.0:
+#12 2.485       Successfully uninstalled setuptools-56.0.0
+#12 2.813   Attempting uninstall: pip
+#12 2.813     Found existing installation: pip 21.1.1
+#12 2.888     Uninstalling pip-21.1.1:
+#12 2.974       Successfully uninstalled pip-21.1.1
+#12 3.781 WARNING: Running pip as root will break packages and permissions. You should install packages reliably by using venv: https://pip.pypa.io/warnings/venv
+#12 3.781 Successfully installed pip-23.0.1 setuptools-67.4.0
+#12 DONE 4.1s
+
+#13 [ 9/22] RUN pip install pytest-testinfra
+#13 sha256:cd97c772de6c2bc2a61da156c3f076c2974e7ca53e75afee3363ddcef3c58d75
+#13 0.609 Collecting pytest-testinfra
+#13 0.730   Downloading pytest_testinfra-7.0.0-py3-none-any.whl (73 kB)
+#13 0.772      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 1.7 MB/s eta 0:00:00
+#13 0.912 Collecting pytest!=3.0.2
+#13 0.938   Downloading pytest-7.2.2-py3-none-any.whl (317 kB)
+#13 1.136      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 317.2/317.2 kB 1.6 MB/s eta 0:00:00
+#13 1.210 Collecting exceptiongroup>=1.0.0rc8
+#13 1.237   Downloading exceptiongroup-1.1.0-py3-none-any.whl (14 kB)
+#13 1.315 Collecting tomli>=1.0.0
+#13 1.342   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)
+#13 1.405 Collecting iniconfig
+#13 1.432   Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+#13 1.517 Collecting packaging
+#13 1.543   Downloading packaging-23.0-py3-none-any.whl (42 kB)
+#13 1.579      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.7/42.7 kB 1.3 MB/s eta 0:00:00
+#13 1.654 Collecting pluggy<2.0,>=0.12
+#13 1.681   Downloading pluggy-1.0.0-py2.py3-none-any.whl (13 kB)
+#13 1.764 Collecting attrs>=19.2.0
+#13 1.806   Downloading attrs-22.2.0-py3-none-any.whl (60 kB)
+#13 1.845      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.0/60.0 kB 1.6 MB/s eta 0:00:00
+#13 1.947 Installing collected packages: tomli, pluggy, packaging, iniconfig, exceptiongroup, attrs, pytest, pytest-testinfra
+#13 2.203 Successfully installed attrs-22.2.0 exceptiongroup-1.1.0 iniconfig-2.0.0 packaging-23.0 pluggy-1.0.0 pytest-7.2.2 pytest-testinfra-7.0.0 tomli-2.0.1
+#13 2.203 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#13 DONE 2.6s
+
+#14 [10/22] RUN mkdir -p /etc/nginx/test
+#14 sha256:a94fd1328e21ec5e1e974af5c24fe7bf474fa0808078c2948f16d2eb5687fb7c
+#14 DONE 0.2s
+
+#16 [11/22] COPY test.py /etc/nginx/test
+#16 sha256:9d5a99473a6b74e9090cd4f67cd90b90caecb6c60944bef7aae6c3f53a3b20c6
+#16 DONE 0.0s
+
+#17 [12/22] RUN ln -s -f /usr/bin/php7 /usr/bin/php
+#17 sha256:8d2b3c7817a838d05ab5a83a582fb0c03a9c594d9bc8a37f3173d2aed0a1882d
+#17 DONE 0.2s
+
+#18 [13/22] COPY config/nginx.conf /etc/nginx/nginx.conf
+#18 sha256:fa04ff313c2e549892d30dc0ace1e7b4f92f30ee1acff6d61ead01a0c55831da
+#18 DONE 0.0s
+
+#19 [14/22] RUN rm /etc/nginx/conf.d/default.conf
+#19 sha256:84c9db1427434dbaf6d404cf0e0e7f574de3221c5be6e7b3e7bc49e4a37a792c
+#19 DONE 0.3s
+
+#20 [15/22] COPY config/fpm-pool.conf /etc/php7/php-fpm.d/www.conf
+#20 sha256:b073d8a99f7c7930d9ce0d8d9093d7c8f61d1cd6a295a47e2b8d7cbbe6573476
+#20 DONE 0.0s
+
+#21 [16/22] COPY config/php.ini /etc/php7/conf.d/custom.ini
+#21 sha256:57c0851a59923af6491987a5226b62b7c9ce77410d9fa79cb24f60a5ae4dc501
+#21 DONE 0.0s
+
+#22 [17/22] COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+#22 sha256:2db86b28f06de6f6a30f7a9cb1701f2406d3e8acebe74ee565436382bc6101e0
+#22 DONE 0.0s
+
+#23 [18/22] RUN mkdir -p /var/www/html
+#23 sha256:2ea921b268db2483d4ec5ac102b7c8654ceb5e4ffadc05da7c0adbfc14f2d35d
+#23 DONE 0.2s
+
+#24 [19/22] RUN chown -R nobody.nobody /var/www/html &&   chown -R nobody.nobody /run &&   chown -R nobody.nobody /var/lib/nginx &&   chown -R nobody.nobody /var/log/nginx
+#24 sha256:69415a52d5b05ba446662d5f1c8a6fa2b972a80ca2eb266c008578c04603d3a4
+#24 DONE 0.3s
+
+#25 [20/22] WORKDIR /var/www/html
+#25 sha256:f1b2dbd20ae5ea274d41c81d919be9481b1f49caa746b3016f478dc73cc561b8
+#25 DONE 0.0s
+
+#26 [21/22] COPY --chown=nobody src/ /var/www/html/
+#26 sha256:82c5d355c0eee71a92fcf0c7da87a4e05b170edd6ea7b0c00ef69e961b716abd
+#26 DONE 0.0s
+
+#27 [22/22] RUN py.test /etc/nginx/test/test.py
+#27 sha256:df92a994b99c4d364e5f9e2ecce0005a9389bd80f1b060c57e53bb8071a8331c
+#27 0.268 ============================= test session starts ==============================
+#27 0.268 platform linux -- Python 3.8.10, pytest-7.2.2, pluggy-1.0.0
+#27 0.274 rootdir: /etc/nginx/test
+#27 0.274 plugins: testinfra-7.0.0
+#27 0.280 collected 2 items
+#27 0.280 
+#27 0.280 ../../../etc/nginx/test/test.py ..                                       [100%]
+#27 0.313 
+#27 0.313 =============================== warnings summary ===============================
+#27 0.313 ../../../usr/lib/python3.8/site-packages/_pytest/cacheprovider.py:432
+#27 0.313   /usr/lib/python3.8/site-packages/_pytest/cacheprovider.py:432: PytestCacheWarning: could not create cache path /etc/nginx/test/.pytest_cache/v/cache/nodeids
+#27 0.313     config.cache.set("cache/nodeids", sorted(self.cached_nodeids))
+#27 0.313 
+#27 0.313 ../../../usr/lib/python3.8/site-packages/_pytest/stepwise.py:56
+#27 0.313   /usr/lib/python3.8/site-packages/_pytest/stepwise.py:56: PytestCacheWarning: could not create cache path /etc/nginx/test/.pytest_cache/v/cache/stepwise
+#27 0.313     session.config.cache.set(STEPWISE_CACHE_DIR, [])
+#27 0.313 
+#27 0.313 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+#27 0.313 ======================== 2 passed, 2 warnings in 0.04s =========================
+#27 DONE 0.3s
+
+#28 exporting to image
+#28 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#28 exporting layers
+#28 exporting layers 0.3s done
+#28 writing image sha256:8c6d55439ef16c88bcbacaaadf4426adda930fef452234844365a5f8f77b3d27 done
+#28 naming to docker.io/library/skillbox:skillbox done
+#28 DONE 0.3s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
